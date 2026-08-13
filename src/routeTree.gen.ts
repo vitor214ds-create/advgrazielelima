@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DireitoCriminalRouteImport } from './routes/direito-criminal'
+import { Route as DireitoSucessorioRouteImport } from './routes/direito-sucessorio'
+import { Route as PlanejamentoPatrimonialRouteImport } from './routes/planejamento-patrimonial'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DireitoCriminalRoute = DireitoCriminalRouteImport.update({
+  id: '/direito-criminal',
+  path: '/direito-criminal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DireitoSucessorioRoute = DireitoSucessorioRouteImport.update({
+  id: '/direito-sucessorio',
+  path: '/direito-sucessorio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanejamentoPatrimonialRoute = PlanejamentoPatrimonialRouteImport.update({
+  id: '/planejamento-patrimonial',
+  path: '/planejamento-patrimonial',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
+  id: '/termos-de-uso',
+  path: '/termos-de-uso',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/direito-criminal': typeof DireitoCriminalRoute
+  '/direito-sucessorio': typeof DireitoSucessorioRoute
+  '/planejamento-patrimonial': typeof PlanejamentoPatrimonialRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/direito-criminal': typeof DireitoCriminalRoute
+  '/direito-sucessorio': typeof DireitoSucessorioRoute
+  '/planejamento-patrimonial': typeof PlanejamentoPatrimonialRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/direito-criminal': typeof DireitoCriminalRoute
+  '/direito-sucessorio': typeof DireitoSucessorioRoute
+  '/planejamento-patrimonial': typeof PlanejamentoPatrimonialRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/direito-criminal'
+    | '/direito-sucessorio'
+    | '/planejamento-patrimonial'
+    | '/politica-de-privacidade'
+    | '/sitemap.xml'
+    | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/direito-criminal'
+    | '/direito-sucessorio'
+    | '/planejamento-patrimonial'
+    | '/politica-de-privacidade'
+    | '/sitemap.xml'
+    | '/termos-de-uso'
+  id:
+    | '__root__'
+    | '/'
+    | '/direito-criminal'
+    | '/direito-sucessorio'
+    | '/planejamento-patrimonial'
+    | '/politica-de-privacidade'
+    | '/sitemap.xml'
+    | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DireitoCriminalRoute: typeof DireitoCriminalRoute
+  DireitoSucessorioRoute: typeof DireitoSucessorioRoute
+  PlanejamentoPatrimonialRoute: typeof PlanejamentoPatrimonialRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/direito-criminal': {
+      id: '/direito-criminal'
+      path: '/direito-criminal'
+      fullPath: '/direito-criminal'
+      preLoaderRoute: typeof DireitoCriminalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/direito-sucessorio': {
+      id: '/direito-sucessorio'
+      path: '/direito-sucessorio'
+      fullPath: '/direito-sucessorio'
+      preLoaderRoute: typeof DireitoSucessorioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planejamento-patrimonial': {
+      id: '/planejamento-patrimonial'
+      path: '/planejamento-patrimonial'
+      fullPath: '/planejamento-patrimonial'
+      preLoaderRoute: typeof PlanejamentoPatrimonialRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos-de-uso': {
+      id: '/termos-de-uso'
+      path: '/termos-de-uso'
+      fullPath: '/termos-de-uso'
+      preLoaderRoute: typeof TermosDeUsoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DireitoCriminalRoute: DireitoCriminalRoute,
+  DireitoSucessorioRoute: DireitoSucessorioRoute,
+  PlanejamentoPatrimonialRoute: PlanejamentoPatrimonialRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
