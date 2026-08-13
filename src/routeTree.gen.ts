@@ -14,6 +14,7 @@ import { Route as DireitoCriminalRouteImport } from './routes/direito-criminal'
 import { Route as DireitoSucessorioRouteImport } from './routes/direito-sucessorio'
 import { Route as PlanejamentoPatrimonialRouteImport } from './routes/planejamento-patrimonial'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermosDeUsoRouteImport } from './routes/termos-de-uso'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
   path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermosDeUsoRoute = TermosDeUsoRouteImport.update({
   id: '/termos-de-uso',
   path: '/termos-de-uso',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/direito-sucessorio': typeof DireitoSucessorioRoute
   '/planejamento-patrimonial': typeof PlanejamentoPatrimonialRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/direito-sucessorio': typeof DireitoSucessorioRoute
   '/planejamento-patrimonial': typeof PlanejamentoPatrimonialRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/direito-sucessorio': typeof DireitoSucessorioRoute
   '/planejamento-patrimonial': typeof PlanejamentoPatrimonialRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termos-de-uso': typeof TermosDeUsoRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/direito-sucessorio'
     | '/planejamento-patrimonial'
     | '/politica-de-privacidade'
+    | '/sitemap.xml'
     | '/termos-de-uso'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/direito-sucessorio'
     | '/planejamento-patrimonial'
     | '/politica-de-privacidade'
+    | '/sitemap.xml'
     | '/termos-de-uso'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/direito-sucessorio'
     | '/planejamento-patrimonial'
     | '/politica-de-privacidade'
+    | '/sitemap.xml'
     | '/termos-de-uso'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   DireitoSucessorioRoute: typeof DireitoSucessorioRoute
   PlanejamentoPatrimonialRoute: typeof PlanejamentoPatrimonialRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermosDeUsoRoute: typeof TermosDeUsoRoute
 }
 
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/termos-de-uso': {
       id: '/termos-de-uso'
       path: '/termos-de-uso'
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   DireitoSucessorioRoute: DireitoSucessorioRoute,
   PlanejamentoPatrimonialRoute: PlanejamentoPatrimonialRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermosDeUsoRoute: TermosDeUsoRoute,
 }
 export const routeTree = rootRouteImport
