@@ -369,7 +369,8 @@ function Home() {
           src={suitImg.url}
           alt=""
           loading="lazy"
-          className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover object-top opacity-20 lg:block"
+          className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover opacity-20 lg:block"
+          style={{ objectPosition: "50% 70%" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-graphite via-graphite/95 to-graphite/60" />
         <div className="relative mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">

@@ -29,7 +29,8 @@ export function PracticePage({
       {/* Hero */}
       <section className="relative overflow-hidden bg-ink">
         <div className="absolute inset-0 opacity-25">
-          <img src={image} alt="" className="h-full w-full object-cover object-top" />
+          <img src={image} alt="" className="h-full w-full object-cover"
+            style={{ objectPosition: "50% 35%" }} />
           <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 to-ink/40" />
         </div>
         <div className="relative mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
