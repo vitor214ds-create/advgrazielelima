@@ -283,6 +283,13 @@ function Home() {
                 Sucessório e Planejamento Patrimonial, especialmente em situações que
                 envolvem litígios entre herdeiros.
               </p>
+              <p>
+                advogado criminalista, especialista na Lei de Drogas, Tribunal do Júri e em
+                sustentação oral, focada na defesa técnica de crimes dolosos contra a vida
+                (como homicídio e feminicídio) e na atuante em estratégica perante os
+                Tribunais de Justiça e Tribunais Superiores, com oratória persuasiva e estudo
+                aprofundado dos órgãos de persecução penal.
+              </p>
               <p>Atualmente, conto com 12 anos de experiência na advocacia.</p>
               <p>
                 Minha atuação é pautada pela análise individualizada de cada caso, pela busca
